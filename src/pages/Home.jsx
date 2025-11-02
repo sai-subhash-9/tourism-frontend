@@ -18,9 +18,7 @@ const Home = () => {
   const getStates = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000/api/v1/tourism/states"}`
-      );
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/states`);
       if (res.data?.success) {
         setStates(res.data.data);
       }
